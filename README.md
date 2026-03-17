@@ -93,10 +93,18 @@ npm run dev
 如果你是下载下来想直接把它像一个可运行产品一样拉起来，推荐：
 
 ```bash
+npm run app:install
+```
+
+或者：
+
+```bash
 npm run app:up
 ```
 
-这个命令会自动：
+`npm run app:install` 会先检查 Node / npm，再自动启动整个应用。
+
+`npm run app:up` 会自动：
 
 - 自动补齐 `.env` / `.env.local`
 - 自动安装依赖
@@ -109,6 +117,7 @@ npm run app:up
 常用命令：
 
 ```bash
+npm run app:install
 npm run app:up
 npm run app:status
 npm run app:logs
@@ -192,6 +201,7 @@ README_SCREENSHOT_BASE_URL=http://127.0.0.1:3000 npm run screenshots:readme
 
 ```bash
 npm run dev:up
+npm run app:install
 npm run app:up
 npm run app:status
 npm run app:logs

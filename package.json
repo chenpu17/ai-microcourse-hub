@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "app:install": "bash scripts/install.sh",
     "app:up": "bash scripts/appctl.sh up",
     "app:down": "bash scripts/appctl.sh down",
     "app:restart": "bash scripts/appctl.sh restart",
