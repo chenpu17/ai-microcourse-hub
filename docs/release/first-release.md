@@ -115,3 +115,9 @@
 - 暂未做移动端适配
 - 资料管理以外链方式为主
 ```
+
+## 建议发布动作
+
+- Git tag：`v0.1.0`
+- Release title：`AI 微波炉 v0.1.0 · 首个可演示版本`
+- Release body：直接使用 `docs/release/github-release-v0.1.0.md`

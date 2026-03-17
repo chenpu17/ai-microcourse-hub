@@ -228,6 +228,7 @@ npm run test:e2e:all
 ## Release Assets / GitHub 发布资料
 
 - 首个 release 文案：`docs/release/first-release.md`
+- GitHub Release 直贴版：`docs/release/github-release-v0.1.0.md`
 - 开源前说明：`docs/release/open-source-note.md`
 - 截图清单：`docs/release/screenshots-checklist.md`
 - README 展示截图：`docs/screenshots/`
@@ -257,3 +258,9 @@ npm run test:e2e:all
 - 管理员权限分层
 - 上传文件对象存储
 - 运营数据看板与留存统计
+
+## License / 许可证
+
+This project is released under the `MIT` License.
+
+详见 `LICENSE`。
