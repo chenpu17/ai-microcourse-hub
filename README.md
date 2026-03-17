@@ -232,6 +232,7 @@ npm run test:e2e:all
 - 开源前说明：`docs/release/open-source-note.md`
 - 截图清单：`docs/release/screenshots-checklist.md`
 - README 展示截图：`docs/screenshots/`
+- 版本变更记录：`CHANGELOG.md`
 
 ## Structure / 目录结构
 
