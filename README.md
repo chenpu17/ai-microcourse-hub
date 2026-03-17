@@ -88,6 +88,49 @@ npm run db:seed
 npm run dev
 ```
 
+## Product-style Boot / 产品级一键启动
+
+如果你是下载下来想直接把它像一个可运行产品一样拉起来，推荐：
+
+```bash
+npm run app:up
+```
+
+这个命令会自动：
+
+- 自动补齐 `.env` / `.env.local`
+- 自动安装依赖
+- 自动执行 `db:push`
+- SQLite 首次启动时自动灌入演示数据
+- 自动构建生产包
+- 自动以后台方式启动应用
+- 自动做 `/api/health` 健康检查
+
+常用命令：
+
+```bash
+npm run app:up
+npm run app:status
+npm run app:logs
+npm run app:down
+npm run app:restart
+```
+
+默认会启动在：
+
+- `http://127.0.0.1:3000`
+
+也支持临时指定端口：
+
+```bash
+APP_PORT=3200 npm run app:up
+```
+
+运行日志和 PID 会放在：
+
+- `.runtime/app.log`
+- `.runtime/app.pid`
+
 ## Feature Set / 功能能力
 
 - 历史微课卡片列表，每页最多展示 16 条
@@ -149,6 +192,11 @@ README_SCREENSHOT_BASE_URL=http://127.0.0.1:3000 npm run screenshots:readme
 
 ```bash
 npm run dev:up
+npm run app:up
+npm run app:status
+npm run app:logs
+npm run app:down
+npm run app:restart
 npm run dev
 npm run build
 npm run lint

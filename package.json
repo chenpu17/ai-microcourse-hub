@@ -3,6 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "app:up": "bash scripts/appctl.sh up",
+    "app:down": "bash scripts/appctl.sh down",
+    "app:restart": "bash scripts/appctl.sh restart",
+    "app:status": "bash scripts/appctl.sh status",
+    "app:logs": "bash scripts/appctl.sh logs",
     "dev:up": "bash scripts/dev-up.sh",
     "dev": "next dev",
     "build": "next build",
