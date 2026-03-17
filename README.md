@@ -6,6 +6,8 @@
 
 AI Microwave is a playful internal AI microcourse hub for lightning talk submissions, course archives, and lightweight community operations.
 
+All names, links, and intranet URLs in this repository are demo placeholders for presentation purposes.
+
 ## Gallery / 页面预览
 
 ![AI 微波炉首页首屏](docs/screenshots/01-home-hero.png)
@@ -73,6 +75,7 @@ npm run dev:up
 默认管理员口令：
 
 - `microwave-admin`
+- 仅用于本地演示，正式环境请务必替换
 
 如果你想手动启动：
 
@@ -175,7 +178,7 @@ ADMIN_PASSWORD="microwave-admin"
 ```env
 ADMIN_AUTH_MODE="trusted_header"
 ADMIN_TRUSTED_HEADER="x-internal-user"
-ADMIN_TRUSTED_USERS="alice,bob,chenpu"
+ADMIN_TRUSTED_USERS="alice,bob,charlie"
 ```
 
 如果 `ADMIN_TRUSTED_USERS` 为空，则任何带该 header 的请求都能进入后台；正式环境不建议这样配置。
