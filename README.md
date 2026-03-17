@@ -6,6 +6,20 @@
 
 AI Microwave is a playful internal AI microcourse hub for lightning talk submissions, course archives, and lightweight community operations.
 
+## Gallery / 页面预览
+
+![AI 微波炉首页首屏](docs/screenshots/01-home-hero.png)
+
+| Home Archive / 首页历史微课 | Course Detail / 微课详情页 |
+| --- | --- |
+| ![首页历史微课](docs/screenshots/02-home-archive-grid.png) | ![微课详情页](docs/screenshots/03-course-detail.png) |
+
+| Success State / 报名成功页 | Admin Panel / 管理员后台 |
+| --- | --- |
+| ![报名成功页](docs/screenshots/04-submit-success.png) | ![管理员报名信息](docs/screenshots/05-admin-submissions.png) |
+
+![管理员历史活动台账](docs/screenshots/06-admin-history-table.png)
+
 ## Overview / 项目简介
 
 - 中文：这是一个偏内部知识社区感的微课平台原型，不是传统培训系统
@@ -106,6 +120,13 @@ npm run screenshots:readme
 - `04-submit-success.png`
 - `05-admin-submissions.png`
 - `06-admin-history-table.png`
+
+如果你想把最新截图同步到仓库展示目录，可以直接覆盖：
+
+```bash
+mkdir -p docs/screenshots
+cp artifacts/readme-screenshots/*.png docs/screenshots/
+```
 
 如果你已经手动启动了服务，也可以复用现成地址：
 
@@ -209,6 +230,7 @@ npm run test:e2e:all
 - 首个 release 文案：`docs/release/first-release.md`
 - 开源前说明：`docs/release/open-source-note.md`
 - 截图清单：`docs/release/screenshots-checklist.md`
+- README 展示截图：`docs/screenshots/`
 
 ## Structure / 目录结构
 
