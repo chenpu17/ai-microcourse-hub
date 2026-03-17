@@ -1,0 +1,33 @@
+{
+  "name": "ai-microcourse-hub",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev:up": "bash scripts/dev-up.sh",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "db:push": "prisma db push",
+    "db:seed": "node prisma/seed.mjs",
+    "test:e2e": "playwright test --grep-invert @sso",
+    "test:e2e:sso": "ADMIN_AUTH_MODE=trusted_header ADMIN_TRUSTED_HEADER=x-e2e-user ADMIN_TRUSTED_USERS=e2e-admin playwright test --grep @sso",
+    "test:e2e:all": "npm run test:e2e && npm run test:e2e:sso"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.7.0",
+    "next": "^15.3.3",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^22.15.17",
+    "@types/react": "^19.1.4",
+    "@types/react-dom": "^19.1.5",
+    "eslint": "^9.26.0",
+    "eslint-config-next": "^15.3.3",
+    "prisma": "^6.7.0",
+    "typescript": "^5.8.3"
+  }
+}
