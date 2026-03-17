@@ -10,6 +10,7 @@
     "lint": "next lint",
     "db:push": "prisma db push",
     "db:seed": "node prisma/seed.mjs",
+    "screenshots:readme": "node scripts/capture-readme-screenshots.mjs",
     "test:e2e": "playwright test --grep-invert @sso",
     "test:e2e:sso": "ADMIN_AUTH_MODE=trusted_header ADMIN_TRUSTED_HEADER=x-e2e-user ADMIN_TRUSTED_USERS=e2e-admin playwright test --grep @sso",
     "test:e2e:all": "npm run test:e2e && npm run test:e2e:sso"

@@ -4,30 +4,39 @@
 
 `AI 微波炉` 是一个面向公司内部的微课社区：员工可以免登录报名分享 10~45 分钟的小课，管理员可以轻运营式地整理活动、归档视频与资料链接，团队成员则能像逛一个年轻、轻松的小社区一样持续吸收 AI 实战经验。
 
-## 项目亮点
+AI Microwave is a playful internal AI microcourse hub for lightning talk submissions, course archives, and lightweight community operations.
 
-- 轻社区首页：更偏内容社区，不是传统培训系统
-- 微课归档：支持历史微课卡片浏览、分页、详情页与相关推荐
-- 免登录报名：只填议题、姓名、预计时长即可提交分享意向
-- 运营友好：管理员后台分为 `报名信息` 和 `历史活动` 两个 tab，更适合日常维护
-- 多资料链接：一场历史微课可配置多个资料链接、录屏链接、延伸阅读
-- 两种后台认证：支持 `password` 和 `trusted_header`
-- 可直接演示：内置 Prisma + SQLite + seed 数据，拉起就能看效果
+## Overview / 项目简介
 
-## 仓库展示用一句话
+- 中文：这是一个偏内部知识社区感的微课平台原型，不是传统培训系统
+- English: A lightweight internal-learning community prototype rather than a conventional LMS
+- 中文：重点在于降低分享门槛、沉淀真实经验、让管理员更容易轻运营
+- English: It is built to lower sharing friction, preserve real AI workflows, and keep operations simple
+
+## Highlights / 项目亮点
+
+- 轻社区首页 / Community-style homepage with a lighter, more social tone
+- 微课归档 / Archived microcourses with cards, pagination, detail pages, and related content
+- 免登录报名 / Login-free talk submission flow for fast participation
+- 轻运营后台 / Operator-friendly admin panel split into `报名信息` and `历史活动`
+- 多资料链接 / Multiple material links per archived course
+- 双认证模式 / `password` and `trusted_header` admin auth modes
+- 开箱可演示 / Prisma + SQLite + seed data for immediate local demos
+
+## Repo One-liner / 仓库一句话
 
 适合作为 GitHub 仓库描述：
 
 > A playful internal AI microcourse hub for talk submissions, course archives, and lightweight community operations.
 
-## 页面一览
+## Pages / 页面一览
 
 - `/`：社区首页，展示品牌氛围、近期微课、历史微课列表与报名入口
 - `/micro-courses/[slug]`：微课详情页，查看视频回放、资料链接、讲师信息与相关推荐
 - `/success`：报名成功与状态反馈页
 - `/admin`：管理员轻运营面板，维护报名信息与历史活动
 
-## 快速开始
+## Quick Start / 快速开始
 
 最省事的方式：
 
@@ -62,7 +71,7 @@ npm run db:seed
 npm run dev
 ```
 
-## 功能能力
+## Feature Set / 功能能力
 
 - 历史微课卡片列表，每页最多展示 16 条
 - 历史微课详情页，支持多个资料链接与录播链接展示
@@ -72,7 +81,39 @@ npm run dev
 - 后台表格化运营视图，便于按主题、讲师、时间管理内容
 - `GET /api/health` 健康检查接口
 
-## 技术栈
+## Screenshot Workflow / README 截图采集
+
+为了方便你继续完善 GitHub 首页，我补了一条一键截图命令：
+
+```bash
+npm run screenshots:readme
+```
+
+这个脚本会自动：
+
+- 在隔离的 SQLite 临时库里执行 `db:push` 和 `db:seed`
+- 默认启动一个本地服务在 `http://127.0.0.1:3100`
+- 用 Playwright 采集 6 张 README / Release 常用截图
+- 输出到 `artifacts/readme-screenshots`
+
+它不会覆盖你当前 `prisma/dev.db` 里的本地数据。
+
+默认生成：
+
+- `01-home-hero.png`
+- `02-home-archive-grid.png`
+- `03-course-detail.png`
+- `04-submit-success.png`
+- `05-admin-submissions.png`
+- `06-admin-history-table.png`
+
+如果你已经手动启动了服务，也可以复用现成地址：
+
+```bash
+README_SCREENSHOT_BASE_URL=http://127.0.0.1:3000 npm run screenshots:readme
+```
+
+## Tech Stack / 技术栈
 
 - `Next.js 15` + `React 19`
 - `Prisma`
@@ -80,7 +121,7 @@ npm run dev
 - `Playwright`
 - `TypeScript`
 
-## 常用命令
+## Commands / 常用命令
 
 ```bash
 npm run dev:up
@@ -89,12 +130,13 @@ npm run build
 npm run lint
 npm run db:push
 npm run db:seed
+npm run screenshots:readme
 npm run test:e2e
 npm run test:e2e:sso
 npm run test:e2e:all
 ```
 
-## 管理员认证模式
+## Admin Auth / 管理员认证模式
 
 ### `password`
 
@@ -117,7 +159,7 @@ ADMIN_TRUSTED_USERS="alice,bob,chenpu"
 
 如果 `ADMIN_TRUSTED_USERS` 为空，则任何带该 header 的请求都能进入后台；正式环境不建议这样配置。
 
-## 部署方式
+## Deploy / 部署方式
 
 ### Node 部署
 
@@ -142,7 +184,7 @@ docker compose up --build
 - `ADMIN_TRUSTED_HEADER`
 - `ADMIN_TRUSTED_USERS`
 
-## 测试
+## Testing / 测试
 
 普通口令模式：
 
@@ -162,13 +204,13 @@ npm run test:e2e:sso
 npm run test:e2e:all
 ```
 
-## GitHub 发布资料
+## Release Assets / GitHub 发布资料
 
 - 首个 release 文案：`docs/release/first-release.md`
 - 开源前说明：`docs/release/open-source-note.md`
 - 截图清单：`docs/release/screenshots-checklist.md`
 
-## 目录结构
+## Structure / 目录结构
 
 - `src/app`：页面与 API 路由
 - `src/components`：前端交互组件
@@ -176,14 +218,15 @@ npm run test:e2e:all
 - `prisma/schema.prisma`：数据模型定义
 - `prisma/seed.mjs`：演示数据
 - `scripts/dev-up.sh`：一键本地启动脚本
+- `scripts/capture-readme-screenshots.mjs`：README 截图采集脚本
 
-## 适用场景
+## Use Cases / 适用场景
 
 - 企业内部 AI 学习分享社区
 - 内部技术午餐会 / 闪电分享 / 微课归档平台
 - 轻量运营型知识社区原型
 
-## 后续建议
+## Roadmap / 后续建议
 
 如果准备正式内网长期使用，建议继续升级：
 
